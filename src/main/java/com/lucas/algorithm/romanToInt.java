@@ -52,10 +52,14 @@ public class romanToInt {
      * Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
      */
 
-
+    /**
+     * 罗马数转化为阿拉伯数，时间复杂度O(n),空间复杂度O(n)
+     * @param s
+     * @return
+     */
     public static int romanToInt(String s) {
 
-        Map map = new HashMap();
+        Map map = new HashMap();//定义每个字符相对应的整数
         map.put('I',1);
         map.put('V',5);
         map.put('X',10);
@@ -69,9 +73,9 @@ public class romanToInt {
         int i = 0;
         while (i<c.length){
             int num = 0;
-            if(i+1<c.length && (int)map.get(c[i])< (int)map.get(c[i+1])){
+            if(i+1<c.length && (int)map.get(c[i])< (int)map.get(c[i+1])){//如果下一个数比当前数大，则总数减去当前数
                 num = num - (int)map.get(c[i]);
-            }else {
+            }else {//否则总数加上当前数
                 num = (int)map.get(c[i]);
             }
             result = result + num;

@@ -1,5 +1,7 @@
 package com.lucas.algorithm;
 
+import org.springframework.util.StopWatch;
+
 public class countAndSay {
 
     /**
@@ -60,6 +62,11 @@ public class countAndSay {
         return res;
     }
 
+    /**
+     * 性能上比上面那个好
+     * @param n
+     * @return
+     */
     public static String countAndSay1(int n) {
         StringBuilder curr=new StringBuilder("1");
         StringBuilder prev;
@@ -85,12 +92,15 @@ public class countAndSay {
     }
 
     public static void main(String[] args) {
-        System.out.println(countAndSay(1));//1
-        System.out.println(countAndSay(2));//11
-        System.out.println(countAndSay(3));//21
-        System.out.println(countAndSay(4));//1211
-        System.out.println(countAndSay(5));//111221
-        System.out.println(countAndSay(6));//312211
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start("task1");
+        System.out.println(countAndSay1(10));//1
+        stopWatch.stop();
+        stopWatch.start("task2");
+        System.out.println(countAndSay(10));
+        stopWatch.stop();
+        System.out.println(stopWatch.prettyPrint());
+
     }
 
 }

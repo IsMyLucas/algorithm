@@ -25,7 +25,7 @@ public class plusOne {
      */
 
     /**
-     * plus one,时间复杂度最好请款O(1)，最坏情况O(n),空间复杂度最好情况O(1)，最坏情况O(n)
+     * plus one,时间复杂度最好请款O(1)，最坏情况O(n),空间复杂度O(n)
      * 对其整数数组加一
      * attention：不要忽略末尾位为9，和全是9的特殊数组。
      * @param digits

@@ -27,27 +27,41 @@ public class interpret {
      * Output: "alGalooG"
      */
 
-    public String interpret(String command) {
+    public static String interpret(String command) {
         String res = "";
-        char[] c = command.toCharArray();
-        int i =0;
-        while(i<c.length){
-            if (c[i] == '('){
-                if (c[i+1] == ')') {
+        int i = 0;
+        while(i<command.length()){
+            if (command.charAt(i) == 'G'){
+                res = res + "G";
+            }else if(command.charAt(i) == '('){
+                i++;
+                if (command.charAt(i) == ')') {
                     res = res + "o";
-                    i+=2;
                 }else{
-                    i++;
-                    while(c[i] != ')'){
-                        res = res + c[i++];
-                    }
-
-
+                    res = res + "al";
                 }
             }
+            i++;
         }
+        return res;
+    }
+    public static String interpret1(String command) {
+        StringBuilder S = new StringBuilder(command.length());
+        for(int i = 0 ; i < command.length() ; i++){
+            if(command.charAt(i)=='G') S.append('G');
+            if(command.charAt(i)=='('){
+                if(command.charAt(i+1)==')') {S.append('o'); i++;}
+                else{S.append("al"); i = i + 3;}
+            }
+        }
+        return S.toString();
+    }
 
 
-        return command;
+    public static void main(String[] args) {
+
+        System.out.println(interpret("G()(al)"));
+        System.out.println(interpret("G()()()()(al)"));
+        System.out.println(interpret("(al)G(al)()()G"));
     }
 }

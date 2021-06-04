@@ -1,4 +1,4 @@
-package com.lucas.algorithm;
+package com.lucas.algorithm.easyOne;
 
 import java.util.HashMap;
 import java.util.HashSet;

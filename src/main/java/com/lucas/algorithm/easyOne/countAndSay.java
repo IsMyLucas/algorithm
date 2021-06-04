@@ -1,4 +1,4 @@
-package com.lucas.algorithm;
+package com.lucas.algorithm.easyOne;
 
 import org.springframework.util.StopWatch;
 

@@ -1,4 +1,4 @@
-package com.lucas.algorithm;
+package com.lucas.algorithm.easyOne;
 
 public class sumOddLengthSubarrays {
     /**

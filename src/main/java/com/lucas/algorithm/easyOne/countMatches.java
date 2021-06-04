@@ -1,4 +1,4 @@
-package com.lucas.algorithm;
+package com.lucas.algorithm.easyOne;
 
 import java.util.Arrays;
 import java.util.List;
